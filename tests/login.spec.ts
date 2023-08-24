@@ -49,6 +49,11 @@ test("Login", async ({ page }) => {
   // Check if confirm password is not empty
   await expect(page.locator("[placeholder='Confirm Password']")).toBeTruthy();
 
+  // Check if password and confirm password value is same
+  await expect(page.locator("[placeholder='Password']").inputValue()).toEqual(
+    page.locator("[placeholder='Confirm Password']").inputValue()
+  );
+
   // Check if terms and conditions is checked
   await expect(
     page.locator(
