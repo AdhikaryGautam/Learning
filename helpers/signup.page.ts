@@ -14,15 +14,13 @@ export class SignUpPage implements SignUpType {
 
   constructor(page: Page) {
     this.page = page;
-    this.nameInput = page.getByPlaceholder("Enter your name");
-    this.emailInput = page.getByPlaceholder("Email");
-    this.passwordInput = page.getByPlaceholder("Password", { exact: true });
-    this.confirmPasswordInput = page.getByPlaceholder("Confirm Password");
-    this.termsCheckBox = page.getByLabel(
-      "I have read and agreed to the Terms of Service and Privacy Policy."
-    );
-    this.submitButton = page.getByRole("button", { name: "Next →" });
-    this.verifyButton = page.getByRole("button", { name: "Verify →" });
+    this.nameInput = page.locator("//input[@id='name']");
+    this.emailInput = page.locator("//input[@id='username']");
+    this.passwordInput = page.locator("//input[@id='password']");
+    this.confirmPasswordInput = page.locator("//input[@id='confirmPassword']");
+    this.termsCheckBox = page.locator("//input[@type='checkbox']");
+    this.submitButton = page.locator("//button[contains(text(),'Next →')]");
+    this.verifyButton = page.locator("//button[contains(text(),'Verify →')]");
   }
 
   goto: SignUpType["goto"] = async () => {
@@ -59,7 +57,7 @@ export class SignUpPage implements SignUpType {
     await this.verifyButton.click();
   }
 
-  checkError: SignUpType["checkError"] = async (error) => {
+  checkErrorMessage: SignUpType["checkErrorMessage"] = async (error) => {
     // Get name error message
     const err = await this.page
       .locator(".text-error.label-text-alt")

@@ -20,5 +20,5 @@ export interface SignUpType {
   waitUrl: (url: RegExp) => Promise<void>;
   getRandomEmail: () => string;
   verifyCode: () => Promise<void>;
-  checkError: (error: string) => Promise<void>;
+  checkErrorMessage: (error: string) => Promise<void>;
 }

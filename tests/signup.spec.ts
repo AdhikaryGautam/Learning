@@ -38,7 +38,7 @@ test("Login with empty name", async ({ page }) => {
   await signUp.submitButton.click();
 
   // check error
-  await signUp.checkError("Name is required");
+  await signUp.checkErrorMessage("Name is required");
 });
 
 test("Login with empty email", async ({ page }) => {
@@ -56,7 +56,7 @@ test("Login with empty email", async ({ page }) => {
   await signUp.submitButton.click();
 
   // check error
-  await signUp.checkError("Email is required");
+  await signUp.checkErrorMessage("Email is required");
 });
 
 test("Login with empty password", async ({ page }) => {
@@ -74,7 +74,7 @@ test("Login with empty password", async ({ page }) => {
   await signUp.submitButton.click();
 
   // check error
-  await signUp.checkError("Password is required");
+  await signUp.checkErrorMessage("Password is required");
 });
 
 test("Login with empty confirm password", async ({ page }) => {
@@ -92,7 +92,7 @@ test("Login with empty confirm password", async ({ page }) => {
   await signUp.submitButton.click();
 
   // check error
-  await signUp.checkError("Confirm Password is required");
+  await signUp.checkErrorMessage("Confirm Password is required");
 });
 
 test("Login with unmatching passwords", async ({ page }) => {
@@ -110,7 +110,7 @@ test("Login with unmatching passwords", async ({ page }) => {
   await signUp.submitButton.click();
 
   // check error
-  await signUp.checkError("Confirm Password does not match");
+  await signUp.checkErrorMessage("Confirm Password does not match");
 });
 
 test("Login with unchecked terms and conditions", async ({ page }) => {
