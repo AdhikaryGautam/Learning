@@ -7,7 +7,7 @@ test("Login", async ({ page }) => {
   await page.getByPlaceholder("Enter your name").click();
 
   // Fill [placeholder="Enter your name"]
-  await page.getByPlaceholder("Enter your name").fill("Gautam Adhikari");
+  await page.getByPlaceholder("Enter your name").fill("Gautam");
 
   // Click [placeholder="Email"]
   await page.getByPlaceholder("Email").click();
